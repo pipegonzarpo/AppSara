@@ -5,14 +5,15 @@ using UnityEngine;
 public class Dragging : MonoBehaviour
 {
     private bool _mouseState;
-    private GameObject target;
+    public GameObject target;
     public Vector3 screenSpace;
     public Vector3 offset;
+    public static Dragging singleton;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
-
+        singleton = this;
     }
 
     // Update is called once per frame

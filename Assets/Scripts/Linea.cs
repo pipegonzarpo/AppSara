@@ -21,7 +21,7 @@ public class Linea : MonoBehaviour
         {
             transform.LookAt(objetivo);
             transform.localScale = Vector3.one * (transform.position - objetivo.position).magnitude;
-            l.SetPosition(i, Curva((float)i/(float)secciones) + transform.up*offset);
+            l.SetPosition(i, Curva((float)i/(float)(secciones-1)) + transform.up*offset);
         }
     }
 
