@@ -10,6 +10,7 @@ public class Linea : MonoBehaviour
     LineRenderer l;
     public Transform pivote;
     public int secciones;
+    public Transform punta;
     void Start()
     {
         l = GetComponent<LineRenderer>();
@@ -21,7 +22,12 @@ public class Linea : MonoBehaviour
         {
             transform.LookAt(objetivo);
             transform.localScale = Vector3.one * (transform.position - objetivo.position).magnitude;
-            l.SetPosition(i, Curva((float)i/(float)(secciones-1)) + transform.up*offset);
+            l.SetPosition(i, Curva((float)i/(float)(secciones)) + transform.up*offset);
+        }
+        if (punta != null)
+        {
+            punta.position = Curva((float)(secciones - 1) / (float)(secciones)) + transform.up * offset;
+            punta.LookAt(objetivo);
         }
     }
 
