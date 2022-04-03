@@ -11,4 +11,12 @@ public class ClickAccion : MonoBehaviour
     {
         eventoClick.Invoke();
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
 }
